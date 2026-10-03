@@ -10,6 +10,17 @@ The agent runs in a terminal. A buyer logs in (there are two fictional sample bu
 
 This project exists to learn how an agent built on the Claude API actually works underneath: the loop where Claude asks to use a tool, your own code runs it, and the result goes back to Claude so it can keep reasoning or give a final answer.
 
+## Design decisions
+
+I'm a product designer, so most of my time on this went into deciding what the agent should and shouldn't do. These are the main choices and why I made them.
+
+- **One search tool instead of three.** I started with separate tools for searching approved products, checking a product's approval status, and looking up company policy. But buyers usually come in wanting one specific product, and only after that do they compare alternatives or decide to request it. So search covers the whole catalog and shows the approval status on every result, with an option to show only approved products.
+- **The buyer always confirms before a request goes out.** The agent never submits a request on its own, even when it seems sure. The request goes to an admin with the buyer's name on it, so the buyer should be the one who says yes.
+- **Alternatives first, then the admin.** When the agent can't help, because requests are turned off or a product is blocked, it first suggests approved products that do the same job. If none of those work, it points the buyer to their admin. In my past projects, people who worked closely together preferred to reach each other on Slack or email, so the agent doesn't try to replace that.
+- **The agent doesn't buy anything.** It links to the product page, and the buyer looks at the purchase options and subscribes there themselves.
+- **No tool for checking request status.** The existing Approval requests page already shows that, so I didn't rebuild it inside the agent.
+- **Realistic fake data.** Every fictional vendor and product is based on a real AWS Marketplace listing, renamed and rewritten, so the use cases stay true to how buyers actually shop. There are two test buyers: one whose company allows requests and one whose company doesn't.
+
 ## How it works
 
 Claude has three tools it can call. It decides when to call them based on what the buyer asks; your code is the one that actually runs them and decides what's allowed.
