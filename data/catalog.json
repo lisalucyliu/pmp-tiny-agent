@@ -1,0 +1,338 @@
+[
+  {
+    "product_id": "prod-egiccoxd",
+    "vendor": "Watchtail",
+    "name": "Watchtail Enterprise",
+    "type": "SaaS",
+    "description": "Observability and security platform for large companies: metrics, logs, traces, and database monitoring",
+    "link": "https://example.com/marketplace/prod-egiccoxd",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-blkffdyr",
+    "vendor": "Watchtail",
+    "name": "Watchtail Pro",
+    "type": "SaaS",
+    "description": "The same platform for smaller teams including database monitoring",
+    "link": "https://example.com/marketplace/prod-blkffdyr",
+    "approval": {
+      "Engineering": "A",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-jyxmvpxi",
+    "vendor": "Watchtail",
+    "name": "Watchtail Agent",
+    "type": "AMI",
+    "description": "Monitoring agent preinstalled on an EC2 image",
+    "link": "https://example.com/marketplace/prod-jyxmvpxi",
+    "approval": {
+      "Engineering": "A",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-fhjizsnu",
+    "vendor": "Watchtail",
+    "name": "Watchtail Operator",
+    "type": "Container",
+    "description": "Installs and manages the Watchtail agent on Kubernetes",
+    "link": "https://example.com/marketplace/prod-fhjizsnu",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-qsuwaupp",
+    "vendor": "Sentrypoint Security",
+    "name": "Managed Watchtail Threat Detection",
+    "type": "Professional services",
+    "description": "24/7 managed security service that runs on Watchtail threat detection",
+    "link": "https://example.com/marketplace/prod-qsuwaupp",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-wgaqnple",
+    "vendor": "Ironveil",
+    "name": "Ironveil Cloud Guard",
+    "type": "SaaS",
+    "description": "RETIRED. Customers moved to Ironveil Horizon",
+    "link": "https://example.com/marketplace/prod-wgaqnple",
+    "approval": {
+      "Engineering": "A",
+      "Finance": "A"
+    }
+  },
+  {
+    "product_id": "prod-pxpaoxfs",
+    "vendor": "Ironveil",
+    "name": "Ironveil Horizon",
+    "type": "SaaS",
+    "description": "AI security platform that predicts and responds to threats across AWS and multicloud",
+    "link": "https://example.com/marketplace/prod-pxpaoxfs",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-wqokvyvl",
+    "vendor": "Lakeforge",
+    "name": "Lakeforge Data Platform",
+    "type": "SaaS",
+    "description": "Unified data and AI platform with a 14-day free trial",
+    "link": "https://example.com/marketplace/prod-wqokvyvl",
+    "approval": {
+      "Engineering": "A",
+      "Finance": "A"
+    }
+  },
+  {
+    "product_id": "prod-tuxmgyxc",
+    "vendor": "Talonix",
+    "name": "Talonix Platform",
+    "type": "SaaS",
+    "description": "AI protection for devices identities and cloud through one agent",
+    "link": "https://example.com/marketplace/prod-tuxmgyxc",
+    "approval": {
+      "Engineering": "A",
+      "Finance": "A"
+    }
+  },
+  {
+    "product_id": "prod-gpgexaru",
+    "vendor": "QuarryDB",
+    "name": "QuarryDB Cloud (pay-as-you-go)",
+    "type": "SaaS",
+    "description": "Fully managed NoSQL database with vector search",
+    "link": "https://example.com/marketplace/prod-gpgexaru",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-wzffeeji",
+    "vendor": "QuarryDB",
+    "name": "QuarryDB Multimodal Embeddings",
+    "type": "Machine learning",
+    "description": "Turns text and images into vectors for search",
+    "link": "https://example.com/marketplace/prod-wzffeeji",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-xildfmqi",
+    "vendor": "Gatekey",
+    "name": "Gatekey Workforce Starter",
+    "type": "SaaS",
+    "description": "Identity and access for employees contractors and partners",
+    "link": "https://example.com/marketplace/prod-xildfmqi",
+    "approval": {
+      "Engineering": "A",
+      "Finance": "A"
+    }
+  },
+  {
+    "product_id": "prod-vcbftvsk",
+    "vendor": "Vaultline",
+    "name": "Vaultline Business",
+    "type": "SaaS",
+    "description": "Enterprise password manager",
+    "link": "https://example.com/marketplace/prod-vcbftvsk",
+    "approval": {
+      "Engineering": "A",
+      "Finance": "A"
+    }
+  },
+  {
+    "product_id": "prod-rqccxbpo",
+    "vendor": "Meshwire",
+    "name": "Meshwire",
+    "type": "SaaS",
+    "description": "Secure networking that replaces legacy VPNs",
+    "link": "https://example.com/marketplace/prod-rqccxbpo",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-wrensiiq",
+    "vendor": "Auditlane",
+    "name": "Auditlane",
+    "type": "SaaS",
+    "description": "Compliance and security automation",
+    "link": "https://example.com/marketplace/prod-wrensiiq",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-wtvfcarn",
+    "vendor": "Tunnelport",
+    "name": "Tunnelport Access Server (BYOL)",
+    "type": "AMI",
+    "description": "Self-hosted business VPN on EC2",
+    "link": "https://example.com/marketplace/prod-wtvfcarn",
+    "approval": {
+      "Engineering": "A",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-nstzjrez",
+    "vendor": "Bastion Networks",
+    "name": "Bastion NGFW VM",
+    "type": "AMI",
+    "description": "Next-generation firewall for AWS networks",
+    "link": "https://example.com/marketplace/prod-nstzjrez",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-suaejjhq",
+    "vendor": "Cardinal Linux",
+    "name": "Cardinal Enterprise Linux for SAP",
+    "type": "AMI",
+    "description": "Enterprise Linux for SAP with high availability",
+    "link": "https://example.com/marketplace/prod-suaejjhq",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-dfelhcha",
+    "vendor": "Searchloom",
+    "name": "Searchloom Search API",
+    "type": "AI agents and tools",
+    "description": "Web search API for developers and AI apps",
+    "link": "https://example.com/marketplace/prod-dfelhcha",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-mgvfztmx",
+    "vendor": "Parsewell AI",
+    "name": "Parsewell Document Agent",
+    "type": "AI agents and tools",
+    "description": "Pulls structured data out of messy documents",
+    "link": "https://example.com/marketplace/prod-mgvfztmx",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-pdfyeqdu",
+    "vendor": "Tasklane",
+    "name": "Tasklane MCP Server",
+    "type": "AI agents and tools",
+    "description": "Lets AI assistants read and update Tasklane projects",
+    "link": "https://example.com/marketplace/prod-pdfyeqdu",
+    "approval": {
+      "Engineering": "A",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-zqptofsz",
+    "vendor": "BucketShield",
+    "name": "BucketShield Malware Scanning",
+    "type": "Container",
+    "description": "Scans S3 and other AWS storage for malware",
+    "link": "https://example.com/marketplace/prod-zqptofsz",
+    "approval": {
+      "Engineering": "A",
+      "Finance": "A"
+    }
+  },
+  {
+    "product_id": "prod-vtssklkl",
+    "vendor": "Rankwise AI",
+    "name": "Rankwise Rerank 3",
+    "type": "Machine learning",
+    "description": "Re-sorts search results by meaning",
+    "link": "https://example.com/marketplace/prod-vtssklkl",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-uwkpgoac",
+    "vendor": "Lumora Labs",
+    "name": "Lumora Image Large",
+    "type": "Machine learning",
+    "description": "Image generation model",
+    "link": "https://example.com/marketplace/prod-uwkpgoac",
+    "approval": {
+      "Engineering": "D",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-wzpbgkjv",
+    "vendor": "Holdfast Security",
+    "name": "Holdfast Incident Response Retainer",
+    "type": "Professional services",
+    "description": "On-call incident response team",
+    "link": "https://example.com/marketplace/prod-wzpbgkjv",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-xosprxhe",
+    "vendor": "Identiweave",
+    "name": "Identiweave Identity Resolution",
+    "type": "Data",
+    "description": "Connects customer records across sources for analytics",
+    "link": "https://example.com/marketplace/prod-xosprxhe",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-myxmrdul",
+    "vendor": "Larkspur Linux",
+    "name": "Larkspur Linux 22.04 LTS",
+    "type": "Free",
+    "description": "Free general-purpose Linux",
+    "link": "https://example.com/marketplace/prod-myxmrdul",
+    "approval": {
+      "Engineering": "A",
+      "Finance": "A"
+    }
+  },
+  {
+    "product_id": "prod-jylapuba",
+    "vendor": "Breachkit",
+    "name": "Breachkit Linux",
+    "type": "Free",
+    "description": "Linux for penetration testing and security research",
+    "link": "https://example.com/marketplace/prod-jylapuba",
+    "approval": {
+      "Engineering": "D",
+      "Finance": "D"
+    }
+  }
+]
