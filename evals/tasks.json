@@ -19,7 +19,8 @@
       "question": "I need to buy a database product from Watchtail for my team.",
       "checks": [
         {"type": "tools_exactly", "tools": ["search_products"]},
-        {"type": "has_product_link", "product": "Watchtail Pro"}
+        {"type": "has_product_link", "product": "Watchtail Pro"},
+        {"type": "has_text", "label": "seller name", "text": "Sentrypoint Security"}
       ]
     },
     {
@@ -31,7 +32,8 @@
         {"type": "has_text", "label": "docs link", "text": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/requesting-products-for-procurement.html"},
         {"type": "tool_not_called", "tool": "submit_request"},
         {"type": "no_request_offer", "approximate": true},
-        {"type": "max_product_links", "max": 2}
+        {"type": "max_product_links", "max": 2},
+        {"type": "has_text", "label": "seller name", "text": "Sentrypoint Security"}
       ]
     },
     {
