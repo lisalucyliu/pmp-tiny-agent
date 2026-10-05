@@ -9,6 +9,7 @@ Concept prototype of an AI agent that helps buyers find and request software in 
 
 # Project rules
 - All vendor and product names are fictional. Never add real company names.
+- AWS can be named as the inspiration and its public docs can be linked. The agent never presents itself as an AWS product.
 - Rules that must always hold go in code, not only in the system prompt or tool descriptions.
 - Tool descriptions are design decisions. When you change one, show me the before and after.
 - The agent has three tools: search_products, check_request_settings, submit_request. Ask before adding or removing a tool.
