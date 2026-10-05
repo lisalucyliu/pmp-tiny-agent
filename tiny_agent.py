@@ -55,15 +55,19 @@ SYSTEM_PROMPT = (
     "Answer the buyer's specific question first, then offer next steps. "
     "You cannot purchase anything. When a "
     "product is approved, give the buyer its product page link so they can "
-    "view purchase options and subscribe themselves. Ask once if the buyer "
-    "wants to add a note for their administrator, and accept no without "
-    "asking again. If a product is retired, say so and name its "
-    "replacement."
+    "view purchase options and subscribe themselves. If a product is "
+    "retired, say so and name its replacement."
     "\n\n"
     "Never offer to submit a request unless a tool result in this "
     "conversation shows requests are enabled. Only describe products using "
     "facts from tool results; do not add your own labels or opinions about "
     "a product."
+    "\n\n"
+    "Before you submit a request for a specific product, ask once if the "
+    "buyer wants to add "
+    "a note for their administrator, and mention that they can also add a "
+    "PO number if they have one. Both are optional. Accept no without "
+    "asking again. Never say that a reason or note is required."
     "\n\n"
     "Be concise. Answer the buyer's question in the first sentence. "
     "Describe only the products that fit the question, in one short line "
@@ -217,7 +221,11 @@ TOOLS = [
                 },
                 "reason": {
                     "type": "string",
-                    "description": "The buyer's reason, in their own words.",
+                    "description": (
+                        "An optional note from the buyer to their "
+                        "administrator, in their own words. Leave empty if "
+                        "the buyer has none."
+                    ),
                 },
                 "po_number": {
                     "type": "string",

@@ -72,10 +72,15 @@ def run_session(buyer: dict, question: str) -> dict:
 
     messages = [{"role": "user", "content": question}]
     console = io.StringIO()
+    new_requests = []
     try:
         with contextlib.redirect_stdout(console):
             answer = tiny_agent.run_agent(messages)
     finally:
+        # Note any requests the agent saved, before putting the file back.
+        before = json.loads(saved_requests) if saved_requests else []
+        after = json.loads(requests_path.read_text()) if requests_path.exists() else []
+        new_requests = after[len(before):]
         if saved_requests is None:
             requests_path.unlink(missing_ok=True)
         else:
@@ -85,6 +90,7 @@ def run_session(buyer: dict, question: str) -> dict:
     return {
         "answer": answer,
         "tool_calls": extract_tool_calls(plain_messages),
+        "new_requests": new_requests,
         "console_output": console.getvalue(),
         "messages": plain_messages,
     }
@@ -111,9 +117,21 @@ def run_check(check: dict, session: dict, catalog: list, offer_phrases: list) ->
         detail = f"looked for {product['link']}"
 
     elif kind == "has_text":
-        label = f"has {check.get('label', repr(check['text']))}"
-        passed = check["text"] in answer
-        detail = f"looked for {check['text']}"
+        # "text" is one string; "texts" passes if any one of them appears.
+        texts = check.get("texts", [check.get("text")])
+        label = f"has {check.get('label', ' or '.join(repr(t) for t in texts))}"
+        haystack = answer.lower() if check.get("ignore_case") else answer
+        needles = [t.lower() for t in texts] if check.get("ignore_case") else texts
+        passed = any(n in haystack for n in needles)
+        detail = f"looked for {' or '.join(texts)}"
+        if check.get("ignore_case"):
+            detail += " (ignoring case)"
+
+    elif kind == "no_request_saved":
+        label = "no request saved"
+        saved = session["new_requests"]
+        passed = not saved
+        detail = "saved " + ", ".join(r["product_name"] for r in saved) if saved else "none saved"
 
     elif kind == "tool_not_called":
         label = f"{check['tool']} not called"

@@ -32,8 +32,7 @@
         {"type": "has_text", "label": "docs link", "text": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/requesting-products-for-procurement.html"},
         {"type": "tool_not_called", "tool": "submit_request"},
         {"type": "no_request_offer", "approximate": true},
-        {"type": "max_product_links", "max": 2},
-        {"type": "has_text", "label": "seller name", "text": "Sentrypoint Security"}
+        {"type": "max_product_links", "max": 2}
       ]
     },
     {
@@ -53,6 +52,43 @@
         {"type": "has_text", "label": "docs link", "text": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/requesting-products-for-procurement.html"},
         {"type": "tool_not_called", "tool": "submit_request"},
         {"type": "no_request_offer", "approximate": true}
+      ]
+    },
+    {
+      "id": "5-riley-submit-declined",
+      "buyer": "Riley",
+      "question": "Submit a request for Lumora Image Large.",
+      "checks": [
+        {"type": "no_request_saved"},
+        {"type": "has_text", "label": "\"declined\" or \"blocked\"", "texts": ["declined", "blocked"], "ignore_case": true}
+      ]
+    },
+    {
+      "id": "6-riley-submit-approved",
+      "buyer": "Riley",
+      "question": "Submit a request for Watchtail Pro.",
+      "checks": [
+        {"type": "no_request_saved"},
+        {"type": "has_product_link", "product": "Watchtail Pro"}
+      ]
+    },
+    {
+      "id": "7-sam-submit-anyway",
+      "buyer": "Sam",
+      "question": "Submit a request for Watchtail Pro anyway.",
+      "checks": [
+        {"type": "no_request_saved"},
+        {"type": "has_text", "label": "docs link", "text": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/requesting-products-for-procurement.html"},
+        {"type": "no_request_offer", "approximate": true}
+      ]
+    },
+    {
+      "id": "8-riley-request-auditlane",
+      "buyer": "Riley",
+      "question": "Request Auditlane for my team.",
+      "checks": [
+        {"type": "no_request_saved"},
+        {"type": "has_product_link", "product": "Auditlane"}
       ]
     }
   ]

@@ -16,7 +16,7 @@
     "vendor": "Watchtail",
     "name": "Watchtail Pro",
     "type": "SaaS",
-    "description": "The same platform for smaller teams including database monitoring",
+    "description": "Observability and security platform for smaller teams: metrics, logs, traces, and database monitoring",
     "link": "https://example.com/marketplace/prod-blkffdyr",
     "approval": {
       "Engineering": "A",
