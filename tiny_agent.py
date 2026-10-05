@@ -134,7 +134,7 @@ def choose_buyer(buyers: list) -> dict:
         choice = input("Enter a number: ").strip()
         if choice.isdigit() and 1 <= int(choice) <= len(buyers):
             return buyers[int(choice) - 1]
-        print("Please enter a valid number.")
+        print(f"Enter a number from 1 to {len(buyers)}.")
 
 
 # ---- Tool definitions: Claude reads these to decide when and how to call each one ----
@@ -143,7 +143,7 @@ TOOLS = [
     {
         "name": "search_products",
         "description": (
-            "Searches the full AWS Marketplace catalog by product name, "
+            "Searches the company's full software catalog by product name, "
             "vendor, or what the product does. Each result shows the "
             "product name, vendor, type, a one-line description, its "
             "approval status in the buyer's experience, and a link to the "
@@ -229,22 +229,6 @@ TOOLS = [
     },
 ]
 
-# Returned verbatim when requests are disabled, per the spec this agent was
-# built against - Claude is told not to call submit_request again after
-# seeing this, and to point the buyer at their administrator instead.
-REQUESTS_DISABLED_MESSAGE = (
-    "Request not submitted. Product procurement requests are disabled for "
-    "this buyer's Private Marketplace experience. Do not call "
-    "submit_request again for this experience. Tell the buyer that their "
-    "administrator has turned off product requests, so they need to "
-    "contact their administrator directly about this product. Share this "
-    "page, which explains how requests work: "
-    "https://docs.aws.amazon.com/marketplace/latest/buyerguide/"
-    "requesting-products-for-procurement.html "
-    "If the buyer wants alternatives, offer to use search_products with "
-    "the approved-only filter."
-)
-
 STATUS_LABELS = {"A": "approved", "N": "not approved", "D": "declined and blocked"}
 
 
@@ -279,7 +263,10 @@ def search_products(query: str, approved_only: bool = False) -> str:
     header = requests_status_message()
 
     if not matches:
-        return f'{header}\nNo products matched "{query}".'
+        return (
+            f'{header}\nNo products matched "{query}". Ask the buyer for a '
+            "different name or what the product does, then search again."
+        )
 
     shown = matches[:5]
     lines = [header]
@@ -311,7 +298,8 @@ def requests_status_message() -> str:
         return f"Product requests are enabled for the {experience} experience."
     return (
         f"Product requests are disabled for the {experience} experience. "
-        "Do not offer to submit a request. Tell the buyer to contact their "
+        "Do not offer to submit a request. Do not call submit_request. "
+        "Tell the buyer to contact their "
         "administrator directly, and give them one or two relevant product "
         "links to include in their message. Share this page, which explains how "
         f"requests work: {REQUESTS_DOCS_LINK}"
@@ -323,21 +311,40 @@ def check_request_settings() -> str:
 
 
 def submit_request(product_id: str, reason: str = "", po_number: str = "") -> str:
-    if not CURRENT_BUYER["requests_enabled"]:
-        return REQUESTS_DISABLED_MESSAGE
-
+    experience = CURRENT_BUYER["experience"]
     product = next((p for p in CATALOG if p["product_id"] == product_id), None)
     if product is None:
-        return f"No product found with product_id {product_id}. Use search_products to find the correct product_id."
+        return (
+            f"Request not submitted. No product found with product_id "
+            f"{product_id}. Use search_products to find the correct product_id."
+        )
 
-    status = product["approval"][CURRENT_BUYER["experience"]]
+    # Checked after the product lookup so the message can name the product
+    # and give the buyer its link to send to their administrator.
+    if not CURRENT_BUYER["requests_enabled"]:
+        return (
+            f"Request not submitted. Product requests are disabled for the "
+            f"{experience} experience. Do not call submit_request again. Tell "
+            f"the buyer to contact their administrator directly about "
+            f"{product['name']}, and include this link in their message: "
+            f"{product['link']} Share this page, which explains how requests "
+            f"work: {REQUESTS_DOCS_LINK} If the buyer wants alternatives, offer "
+            "to use search_products with approved_only set to true."
+        )
+
+    status = product["approval"][experience]
     if status == "D":
-        return "blocked"
+        return (
+            f"Request not submitted. The administrator declined "
+            f"{product['name']} for the {experience} experience and blocked "
+            "new requests for it. Do not call submit_request again for this "
+            "product. Tell the buyer, and offer to search for approved "
+            "alternatives."
+        )
     if status == "A":
         return (
-            f"{product['name']} is already approved in the "
-            f"{CURRENT_BUYER['experience']} experience. No request needed. "
-            f"View it here: {product['link']}"
+            f"{product['name']} is already approved in the {experience} "
+            f"experience. No request needed. Link: {product['link']}"
         )
 
     record = {
