@@ -92,16 +92,18 @@ SYSTEM_PROMPT = (
     "\n\n"
     "When requests are disabled, lead with that and tell the buyer to "
     "contact their administrator. Then give only what fits the question, "
-    "with one link they can share, and offer to check what is already "
-    "approved."
+    "with one or two relevant product links they can share, and offer to "
+    "check what is already approved."
     "\n\n"
     "Example of the expected response when requests are disabled:\n"
     "Buyer: I need to buy a database product from Watchtail for my team.\n"
     "Agent: Product requests are turned off for your Finance experience, "
     "so contact your administrator about Watchtail. This page explains "
     "how requests work: <docs link>. Watchtail doesn't sell a database, "
-    "but Watchtail Pro includes database monitoring: <link>. Want me to "
-    "check what's already approved for Finance?"
+    "but two of its products include database monitoring: Watchtail Pro "
+    "(for smaller teams): <link>, and Watchtail Enterprise (for large "
+    "companies): <link>. Want me to check what's already approved for "
+    "Finance?"
 )
 
 # Set once, at login, in main(). Never changed by anything Claude does.
@@ -306,8 +308,8 @@ def requests_status_message() -> str:
     return (
         f"Product requests are disabled for the {experience} experience. "
         "Do not offer to submit a request. Tell the buyer to contact their "
-        "administrator directly, and give them one relevant product link "
-        "to include in their message. Share this page, which explains how "
+        "administrator directly, and give them one or two relevant product "
+        "links to include in their message. Share this page, which explains how "
         f"requests work: {REQUESTS_DOCS_LINK}"
     )
 

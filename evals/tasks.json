@@ -1,0 +1,57 @@
+{
+  "request_offer_phrases": [
+    "want me to submit",
+    "want me to request",
+    "want me to send a request",
+    "would you like me to submit",
+    "would you like me to request",
+    "would you like me to send a request",
+    "shall i submit",
+    "shall i request",
+    "i can submit a request",
+    "i can send a request",
+    "i can request"
+  ],
+  "tasks": [
+    {
+      "id": "1-riley-watchtail-database",
+      "buyer": "Riley",
+      "question": "I need to buy a database product from Watchtail for my team.",
+      "checks": [
+        {"type": "tools_exactly", "tools": ["search_products"]},
+        {"type": "has_product_link", "product": "Watchtail Pro"}
+      ]
+    },
+    {
+      "id": "2-sam-watchtail-database",
+      "buyer": "Sam",
+      "question": "I need to buy a database product from Watchtail for my team.",
+      "checks": [
+        {"type": "tools_exactly", "tools": ["search_products"]},
+        {"type": "has_text", "label": "docs link", "text": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/requesting-products-for-procurement.html"},
+        {"type": "tool_not_called", "tool": "submit_request"},
+        {"type": "no_request_offer", "approximate": true},
+        {"type": "max_product_links", "max": 2}
+      ]
+    },
+    {
+      "id": "3-riley-requests-question",
+      "buyer": "Riley",
+      "question": "Can I request products that aren't approved yet?",
+      "checks": [
+        {"type": "tools_exactly", "tools": ["check_request_settings"]}
+      ]
+    },
+    {
+      "id": "4-sam-requests-question",
+      "buyer": "Sam",
+      "question": "Can I request products that aren't approved yet?",
+      "checks": [
+        {"type": "tools_exactly", "tools": ["check_request_settings"]},
+        {"type": "has_text", "label": "docs link", "text": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/requesting-products-for-procurement.html"},
+        {"type": "tool_not_called", "tool": "submit_request"},
+        {"type": "no_request_offer", "approximate": true}
+      ]
+    }
+  ]
+}
