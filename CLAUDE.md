@@ -7,6 +7,9 @@ Concept prototype of an AI agent that helps buyers find and request software in 
 - Restart the agent after any change to code or data.
 - To run the evals, from the ~/pmp-tiny-agent folder: .venv/bin/python evals/run_evals.py (add --runs 3 to run each task 3 times), or use /run-evals in Claude Code. Tasks and checks are in evals/tasks.json.
 
+# Design mode
+- System (Cloudscape). This is the early version of Demo 2.
+
 # Project rules
 - All vendor and product names are fictional. Never add real company names.
 - AWS can be named as the inspiration and its public docs can be linked. The agent never presents itself as an AWS product.
