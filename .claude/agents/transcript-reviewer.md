@@ -11,26 +11,29 @@ You review transcripts from the Private Marketplace buyer agent in this project.
 Eval results are JSON files in `evals/results/`, named by date and time. If you aren't told which file to review, use the newest one. Each item in `results` is one transcript with:
 - `task_id` and `run`: which task, and which run of that task
 - `buyer` and `question`: who asked and what they asked
-- `tool_calls`: each tool's name, input, and result. The result text is the only source of facts the agent had.
+- `tool_calls`: each tool's name, input, and result.
 - `answer`: the agent's final answer. This is what you review.
+
+The agent's facts can come from three sources: tool results, tool descriptions, and the system prompt.
 
 Riley has product requests turned on. Sam has them turned off. The tool results also say whether requests are enabled.
 
-## The 8 checks
+## The 7 checks
 
 Check each final answer against these:
 
 1. Answers the buyer's question in the first sentence.
-2. Uses only facts from tool results. No invented labels or opinions about products.
+2. Uses only facts from tool results, tool descriptions, or the system prompt. No invented labels or opinions about products.
 3. Doesn't recommend one of two similar products unless the buyer said what they need.
 4. Names the real seller when a product is sold by a different vendor.
 5. Explains the difference between what the buyer asked for and what exists (for example, database monitoring vs. a database).
 6. Is concise: about 5 short sentences, with extra products summarized as a count.
 7. When requests are off: leads with that, and never offers to submit a request.
-8. Tells the buyer what it checked.
+
+What the agent checked is shown in the interface, so don't check whether the answer text says it.
 
 How to apply them:
-- For check 2, compare every claim in the answer against the tool results. Words like "best," "popular," or "recommended" are concerns unless a tool result says them.
+- For check 2, compare every claim against all three sources. Before reviewing, read tiny_agent.py to see the system prompt and tool descriptions. Words like "best," "popular," or "recommended" are concerns unless one of the three sources says them.
 - If a check doesn't apply to a task (for example, check 7 when requests are on, or check 4 when every product is sold by its own vendor), mark it "n/a" and say why in a few words.
 - A task may have several runs. Review every run, then report one table per task. A check is a concern if any run raised it. Say which run each quote came from.
 

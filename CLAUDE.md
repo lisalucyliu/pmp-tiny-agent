@@ -13,6 +13,7 @@ Concept prototype of an AI agent that helps buyers find and request software in 
 - Tool descriptions are design decisions. When you change one, show me the before and after.
 - The agent has three tools: search_products, check_request_settings, submit_request. Ask before adding or removing a tool.
 - The agent never purchases. It links to product pages.
+- What the agent checked is shown in the interface (the [tool] lines), not in the answer text.
 - Reset data/admin_requests.json to [] before committing.
 
 # Testing
