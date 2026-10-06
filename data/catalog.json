@@ -334,5 +334,77 @@
       "Engineering": "D",
       "Finance": "D"
     }
+  },
+  {
+    "product_id": "prod-cpfmoklc",
+    "vendor": "Cardinal Linux",
+    "name": "Cardinal Enterprise Linux 9",
+    "type": "AMI",
+    "description": "Enterprise Linux for general server workloads",
+    "link": "https://example.com/marketplace/prod-cpfmoklc",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-aevxhksu",
+    "vendor": "Paneway Systems",
+    "name": "Paneway Server 2022 Base",
+    "type": "AMI",
+    "description": "Server operating system preinstalled on an EC2 image",
+    "link": "https://example.com/marketplace/prod-aevxhksu",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-hbxjaqnl",
+    "vendor": "Ironveil",
+    "name": "Ironveil Workload Security",
+    "type": "SaaS",
+    "description": "Protects servers and cloud workloads from malware and intrusions",
+    "link": "https://example.com/marketplace/prod-hbxjaqnl",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-udxwbsbd",
+    "vendor": "Emberfox",
+    "name": "Emberfox Rooms Enterprise",
+    "type": "AMI",
+    "description": "Private 3D meeting spaces that a company hosts in its own AWS account",
+    "link": "https://example.com/marketplace/prod-udxwbsbd",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-xkmfdvam",
+    "vendor": "Wrenhollow Consulting",
+    "name": "Wrenhollow Text to SQL",
+    "type": "Machine learning",
+    "description": "Turns plain-language questions into SQL queries",
+    "link": "https://example.com/marketplace/prod-xkmfdvam",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
+  },
+  {
+    "product_id": "prod-biidqtxx",
+    "vendor": "Shalecrest Security",
+    "name": "Shalecrest UTM 9",
+    "type": "AMI",
+    "description": "Firewall, VPN, and web filtering in one appliance",
+    "link": "https://example.com/marketplace/prod-biidqtxx",
+    "approval": {
+      "Engineering": "N",
+      "Finance": "N"
+    }
   }
 ]
