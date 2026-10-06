@@ -8,6 +8,8 @@ import StatusIndicator from '@cloudscape-design/components/status-indicator';
 import LiveRegion from '@cloudscape-design/components/live-region';
 import Link from '@cloudscape-design/components/link';
 import Box from '@cloudscape-design/components/box';
+import FormField from '@cloudscape-design/components/form-field';
+import PromptInput from '@cloudscape-design/components/prompt-input';
 import ChatBubble from '@cloudscape-design/chat-components/chat-bubble';
 import Avatar from '@cloudscape-design/chat-components/avatar';
 import { buyer, question, activity, answer } from './conversation.js';
@@ -76,9 +78,22 @@ export default function App() {
         >
           <Container
             footer={
-              <Box variant="small" color="text-body-secondary">
-                Responses can include mistakes. Check product details before you subscribe.
-              </Box>
+              // Cloudscape's gen AI chat pattern puts the disclaimer in the form
+              // field's constraint text. The input is disabled because the page is static.
+              <FormField
+                stretch
+                constraintText="Responses can include mistakes. Check product details before you subscribe."
+              >
+                <PromptInput
+                  value=""
+                  onChange={() => {}}
+                  disabled
+                  placeholder="Ask a question"
+                  ariaLabel="Message the buyer agent"
+                  actionButtonIconName="send"
+                  actionButtonAriaLabel="Send message"
+                />
+              </FormField>
             }
           >
             <div role="region" aria-label="Conversation">
