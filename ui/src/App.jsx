@@ -70,7 +70,7 @@ export default function App() {
           header={
             <Header
               variant="h1"
-              description={`Concept prototype, not affiliated with AWS. Sample conversation for ${buyer.name}, a buyer in the ${buyer.experience} experience. All data is fictional.`}
+              description={`Concept prototype, not affiliated with AWS. Sample conversation for ${buyer.name}, a buyer in the ${buyer.experience} experience. All data is fictional. Static preview. Typing is turned off.`}
             >
               Private catalog buyer agent
             </Header>
@@ -89,7 +89,7 @@ export default function App() {
                   onChange={() => {}}
                   disabled
                   placeholder="Ask a question"
-                  ariaLabel="Message the buyer agent"
+                  ariaLabel="Message the Generative AI assistant"
                   actionButtonIconName="send"
                   actionButtonAriaLabel="Send message"
                 />
