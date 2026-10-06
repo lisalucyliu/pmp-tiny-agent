@@ -89,7 +89,7 @@ export default function App() {
                   onChange={() => {}}
                   disabled
                   placeholder="Ask a question"
-                  ariaLabel="Message the Generative AI assistant"
+                  ariaLabel="Message the generative AI assistant"
                   actionButtonIconName="send"
                   actionButtonAriaLabel="Send message"
                 />
