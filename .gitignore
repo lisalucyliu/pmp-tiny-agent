@@ -10,3 +10,11 @@ __pycache__/
 
 # Eval transcripts
 evals/results/
+
+# UI dependencies and build output
+ui/node_modules/
+ui/dist/
+
+# Design review screenshots and Playwright CLI logs
+reviews/
+.playwright-cli/

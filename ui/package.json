@@ -1,0 +1,22 @@
+{
+  "name": "pmp-tiny-agent-ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@cloudscape-design/chat-components": "^1.0.177",
+    "@cloudscape-design/components": "^3.0.1392",
+    "@cloudscape-design/global-styles": "^1.0.71",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "vite": "^8.3.2"
+  }
+}
